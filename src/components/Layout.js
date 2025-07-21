@@ -1,4 +1,4 @@
-import { Container, Box } from '@mui/material';
+import { Container, Box, Typography, Link} from '@mui/material';
 import Head from 'next/head';
 
 const Layout = ({ children }) => {
@@ -17,6 +17,64 @@ const Layout = ({ children }) => {
         <Container maxWidth="xl" sx={{ py: 4 }}>
           {children}
         </Container>
+      <Box
+          component="footer"
+          sx={{
+            py: 2,
+            px: 2,
+            backgroundColor: 'background.paper',
+            borderTop: '1px solid',
+            borderColor: 'divider',
+            textAlign: 'center',
+          }}
+        >
+          <Typography variant="body2" color="text.secondary">
+            <Box 
+              component="span" 
+              sx={{ 
+                display: { xs: 'block', sm: 'inline' },
+                mb: { xs: 0.5, sm: 0 }
+              }}
+            >
+              Powered by{' '}
+              <Link 
+                href="https://vercel.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                color="inherit"
+                sx={{ textDecoration: 'underline' }}
+              >
+                Vercel
+              </Link>
+            </Box>
+            <Box 
+              component="span" 
+              sx={{ 
+                display: { xs: 'none', sm: 'inline' },
+                mx: 1
+              }}
+            >
+              •
+            </Box>
+            <Box 
+              component="span" 
+              sx={{ 
+                display: { xs: 'block', sm: 'inline' }
+              }}
+            >
+              Developed by{' '}
+              <Link 
+                href="https://subrata.dev" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                color="inherit"
+                sx={{ textDecoration: 'underline' }}
+              >
+                subrata.dev
+              </Link>
+            </Box>
+          </Typography>
+        </Box>
       </Box>
     </>
   );
