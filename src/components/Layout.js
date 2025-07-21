@@ -1,7 +1,9 @@
 import { Container, Box, Typography, Link } from '@mui/material';
 import Head from 'next/head';
-
+import { APP_VERSION } from '../lib/version';
 const Layout = ({ children }) => {
+  // const APP_VERSION = version; // You can import this from package.json if needed
+
   return (
     <>
       <Head>
@@ -20,18 +22,36 @@ const Layout = ({ children }) => {
           {children}
         </Container>
 
-        {/* Footer - matches body color and sticks to bottom */}
+        {/* Footer */}
         <Box
           component="footer"
           sx={{
             py: 2,
             px: 2,
-            backgroundColor: '#f9f9f9', // Same as body background
+            backgroundColor: '#f9f9f9',
             textAlign: 'center',
-            marginTop: 'auto', // Ensures footer sticks to bottom
+            marginTop: 'auto',
           }}
         >
           <Typography variant="body2" color="text.secondary">
+            <Box 
+              component="span" 
+              sx={{ 
+                display: { xs: 'block', sm: 'inline' },
+                mb: { xs: 0.5, sm: 0 }
+              }}
+            >
+              v{APP_VERSION}
+            </Box>
+            <Box 
+              component="span" 
+              sx={{ 
+                display: { xs: 'none', sm: 'inline' },
+                mx: 1
+              }}
+            >
+              •
+            </Box>
             <Box 
               component="span" 
               sx={{ 

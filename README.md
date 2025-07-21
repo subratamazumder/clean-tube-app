@@ -5,7 +5,9 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 First, run the development server:
 
 ```bash
-nvm use 22 && npm run dev
+nvm use 22
+npm install next
+npm run dev
 # or
 yarn dev
 # or
