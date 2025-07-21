@@ -54,7 +54,7 @@ const VideoCard = ({ video, onClick }) => {
       {/* Video Info */}
       <Box sx={{ flexGrow: 1 }}>
         <Typography 
-          variant="subtitle1" 
+          variant="h5" 
           sx={{ 
             fontWeight: 500,
             mb: 1,
