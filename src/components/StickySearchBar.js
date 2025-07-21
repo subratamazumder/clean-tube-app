@@ -64,7 +64,7 @@ const StickySearchBar = ({ query }) => {
             minWidth: '140px' // Prevents layout shift
           }}
         >
-          CleanTube
+          LeanTube
         </Typography>
       )}
       </Box>

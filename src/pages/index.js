@@ -102,7 +102,7 @@ const Home = () => {
                             color: 'black',
                         }}
                     >
-                        CleanTube
+                        LeanTube
                     </Typography>
                     </Box>
                     <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
