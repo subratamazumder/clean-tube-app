@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Head>
-        <title>Video Search App</title>
+        <title>LeanTube</title>
         <meta name="description" content="Search and watch videos" />
       </Head>
       <Box
