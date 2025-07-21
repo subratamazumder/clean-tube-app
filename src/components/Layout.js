@@ -1,4 +1,4 @@
-import { Container, Box, Typography, Link} from '@mui/material';
+import { Container, Box, Typography, Link } from '@mui/material';
 import Head from 'next/head';
 
 const Layout = ({ children }) => {
@@ -12,20 +12,23 @@ const Layout = ({ children }) => {
         sx={{
           minHeight: '100vh',
           backgroundColor: '#f9f9f9',
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
-        <Container maxWidth="xl" sx={{ py: 4 }}>
+        <Container maxWidth="xl" sx={{ py: 4, flex: 1 }}>
           {children}
         </Container>
-      <Box
+
+        {/* Footer - matches body color and sticks to bottom */}
+        <Box
           component="footer"
           sx={{
             py: 2,
             px: 2,
-            backgroundColor: 'background.paper',
-            borderTop: '1px solid',
-            borderColor: 'divider',
+            backgroundColor: '#f9f9f9', // Same as body background
             textAlign: 'center',
+            marginTop: 'auto', // Ensures footer sticks to bottom
           }}
         >
           <Typography variant="body2" color="text.secondary">
