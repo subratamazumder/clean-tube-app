@@ -88,44 +88,65 @@ const Home = () => {
                     }}
                 >
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <VideoLibraryIcon sx={{
-                        color: 'red',
-                        fontSize: '5rem',
-                        mr: 1
-                    }} />
-                    <Typography
-                        variant="h2"
-                        gutterBottom
-                        sx={{
-                            fontWeight: 'bold',
-                            mb: 3,
-                            color: 'black',
-                        }}
-                    >
-                        LeanTube
-                    </Typography>
-                    </Box>
-                    <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
-                        Search what you want to watch!{' '}
+                        <VideoLibraryIcon sx={{
+                            color: 'red',
+                            fontSize: '5rem',
+                            mr: 1
+                        }} />
                         <Typography
-                            component="span"
+                            variant="h2"
+                            gutterBottom
                             sx={{
                                 fontWeight: 'bold',
-                                color: 'red'
+                                mb: 3,
+                                color: 'black',
                             }}
                         >
-                            no distractions!
-                        </Typography>{' '}
-                        <Typography
-                            component="span"
-                            sx={{
-                                fontWeight: 'bold',
-                                color: 'red'
-                            }}
-                        >
-                            no recommendations!
+                            LeanTube
                         </Typography>
-                    </Typography>
+                    </Box>
+                    <Box>
+                        {/* Line 1 - Search text (always on its own line) */}
+                        <Typography
+                            variant="body1"
+                            color="text.secondary"
+                            sx={{
+                                display: 'block',
+                                mb: 1 // Margin bottom for all screen sizes
+                            }}
+                        >
+                            Search what you want to watch!
+                        </Typography>
+
+                        {/* Lines 2 & 3 - Red text phrases */}
+                        <Box sx={{
+                            display: 'flex',
+                            flexDirection: { xs: 'column', sm: 'row' }, // Stack on mobile, inline on desktop
+                            gap: { xs: 0, sm: 1 }, // No gap when stacked, small gap when inline
+                            mb: 2 // Optional bottom margin
+                        }}>
+                            <Typography
+                                component="span"
+                                sx={{
+                                    fontWeight: 'bold',
+                                    color: 'red',
+                                    display: 'block'
+                                }}
+                            >
+                                no distractions!
+                            </Typography>
+                            <Typography
+                                component="span"
+                                sx={{
+                                    fontWeight: 'bold',
+                                    color: 'red',
+                                    display: 'block'
+                                }}
+                            >
+                                no recommendations!
+                            </Typography>
+                        </Box>
+                    </Box>
                     <Box
                         sx={{
                             width: {
