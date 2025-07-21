@@ -87,11 +87,17 @@ const Home = () => {
                         mb: 4,
                     }}
                 >
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Box sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        flexDirection: { xs: 'column', sm: 'row' },  // Stack on mobile, row on desktop
+                        textAlign: { xs: 'center', sm: 'left' }     // Center text on mobile
+                    }}>
                         <VideoLibraryIcon sx={{
                             color: 'red',
-                            fontSize: '5rem',
-                            mr: 1
+                            fontSize: { xs: '3rem', sm: '5rem' },   // Smaller icon on mobile
+                            mr: { xs: 0, sm: 1 },                   // Remove right margin on mobile
+                            mb: { xs: 1, sm: 0 }                    // Add bottom margin on mobile
                         }} />
                         <Typography
                             variant="h2"
@@ -100,6 +106,7 @@ const Home = () => {
                                 fontWeight: 'bold',
                                 mb: 3,
                                 color: 'black',
+                                fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' } // Responsive font size
                             }}
                         >
                             LeanTube
