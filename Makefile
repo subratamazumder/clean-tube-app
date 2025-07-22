@@ -27,7 +27,6 @@ push: version
 	{ echo "❌ Push failed"; exit 1; }
 run:
 	@echo "🚀 Starting application..."
-	nvm use 22 || { echo "❌ Node version 22 not found. Please install it using nvm."; exit 1; }
 	@echo "🔍 Checking Node version..."
 	@echo "✅ Using Node $(shell node -v)"
 	@if [ ! -d "node_modules" ] || [ "package-lock.json" -nt "node_modules" ]; then \

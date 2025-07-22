@@ -112,48 +112,53 @@ const Home = () => {
                             LeanTube
                         </Typography>
                     </Box>
-                    <Box>
-                        {/* Line 1 - Search text (always on its own line) */}
-                        <Typography
-                            variant="body1"
-                            color="text.secondary"
-                            sx={{
-                                display: 'block',
-                                mb: 1 // Margin bottom for all screen sizes
-                            }}
-                        >
-                            Search what you want to watch!
-                        </Typography>
+                    <Box sx={{ textAlign: 'center' }}>
+    {/* Line 1 - Search text (always on its own line) */}
+    <Typography
+        variant="body1"
+        color="text.secondary"
+        sx={{
+            display: 'block',
+            mb: 1, // Margin bottom for all screen sizes
+            textAlign: 'inherit' // Inherits center alignment from parent
+        }}
+    >
+        Search what you want to watch!
+    </Typography>
 
-                        {/* Lines 2 & 3 - Red text phrases */}
-                        <Box sx={{
-                            display: 'flex',
-                            flexDirection: { xs: 'column', sm: 'row' }, // Stack on mobile, inline on desktop
-                            gap: { xs: 0, sm: 1 }, // No gap when stacked, small gap when inline
-                            mb: 2 // Optional bottom margin
-                        }}>
-                            <Typography
-                                component="span"
-                                sx={{
-                                    fontWeight: 'bold',
-                                    color: 'red',
-                                    display: 'block'
-                                }}
-                            >
-                                no distractions!
-                            </Typography>
-                            <Typography
-                                component="span"
-                                sx={{
-                                    fontWeight: 'bold',
-                                    color: 'red',
-                                    display: 'block'
-                                }}
-                            >
-                                no recommendations!
-                            </Typography>
-                        </Box>
-                    </Box>
+    {/* Lines 2 & 3 - Red text phrases */}
+    <Box sx={{
+        display: 'flex',
+        flexDirection: { xs: 'column', sm: 'row' }, // Stack on mobile, inline on desktop
+        gap: { xs: 0, sm: 1 }, // No gap when stacked, small gap when inline
+        mb: 2, // Optional bottom margin
+        justifyContent: 'center', // Center the flex items horizontally
+        alignItems: 'center' // Center the flex items vertically (if needed)
+    }}>
+        <Typography
+            component="span"
+            sx={{
+                fontWeight: 'bold',
+                color: 'red',
+                display: 'block',
+                textAlign: 'inherit' // Inherits center alignment
+            }}
+        >
+            no distractions!
+        </Typography>
+        <Typography
+            component="span"
+            sx={{
+                fontWeight: 'bold',
+                color: 'red',
+                display: 'block',
+                textAlign: 'inherit' // Inherits center alignment
+            }}
+        >
+            no recommendations!
+        </Typography>
+    </Box>
+</Box>
                     <Box
                         sx={{
                             width: {
