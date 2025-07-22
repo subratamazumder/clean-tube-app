@@ -1,12 +1,15 @@
-import { Box, Typography, Stack, Avatar } from '@mui/material';
+import { Box, Typography, Stack, Avatar, useMediaQuery } from '@mui/material';
 import { formatDuration, formatViews, formatTimeAgo } from '../utils/helpers';
 
 const VideoCard = ({ video, onClick }) => {
+  const isMobile = useMediaQuery('(max-width:600px)');
+
   return (
     <Box 
       onClick={onClick}
       sx={{
         display: 'flex',
+        flexDirection: isMobile ? 'column' : 'row',
         gap: 2,
         mb: 3,
         cursor: 'pointer',
@@ -20,7 +23,7 @@ const VideoCard = ({ video, onClick }) => {
       <Box sx={{ 
         position: 'relative',
         flexShrink: 0,
-        width: '360px',
+        width: isMobile ? '100%' : '360px',
         borderRadius: '8px',
         overflow: 'hidden'
       }}>
@@ -54,7 +57,7 @@ const VideoCard = ({ video, onClick }) => {
       {/* Video Info */}
       <Box sx={{ flexGrow: 1 }}>
         <Typography 
-          variant="h5" 
+          variant={isMobile ? 'h6' : 'h5'} 
           sx={{ 
             fontWeight: 500,
             mb: 1,
@@ -78,22 +81,23 @@ const VideoCard = ({ video, onClick }) => {
           {formatViews(video.views)} views • {formatTimeAgo(video.uploadDate)}
         </Typography>
         
-        <Typography 
-          variant="body2" 
-          color="text.secondary"
-          sx={{
-            display: '-webkit-box',
-            WebkitLineClamp: 2,
-            WebkitBoxOrient: 'vertical',
-            overflow: 'hidden'
-          }}
-        >
-          {video.description}
-        </Typography>
+        {!isMobile && (
+          <Typography 
+            variant="body2" 
+            color="text.secondary"
+            sx={{
+              display: '-webkit-box',
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: 'vertical',
+              overflow: 'hidden'
+            }}
+          >
+            {video.description}
+          </Typography>
+        )}
       </Box>
     </Box>
   );
 };
 
-// THIS IS THE CRUCIAL LINE THAT WAS MISSING:
 export default VideoCard;
