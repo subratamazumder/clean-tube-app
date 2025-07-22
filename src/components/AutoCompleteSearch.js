@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Autocomplete, TextField, CircularProgress, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+
 const AutoCompleteSearch = ({ onSearch }) => {
   const [inputValue, setInputValue] = useState('');
   const [options, setOptions] = useState([]);
@@ -37,32 +38,65 @@ const AutoCompleteSearch = ({ onSearch }) => {
           placeholder="Search videos..."
           InputProps={{
             ...params.InputProps,
+            sx: {
+              borderRadius: '28px',
+              paddingRight: '4px',
+              backgroundColor: 'background.paper',
+              '& .MuiOutlinedInput-notchedOutline': {
+                border: '1px solid',
+                borderColor: 'divider',
+              },
+              '&:hover .MuiOutlinedInput-notchedOutline': {
+                borderColor: 'text.secondary',
+              },
+              '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                borderColor: 'primary.main',
+                borderWidth: '1px',
+              },
+              '& input': {
+                padding: '12px 16px',
+              },
+            },
             endAdornment: (
               <>
                 {loading ? (
-                  <CircularProgress color="inherit" size={20} />
+                  <CircularProgress 
+                    color="inherit" 
+                    size={20} 
+                    sx={{ mr: 1 }} 
+                  />
                 ) : (
                   <IconButton 
                     onClick={() => inputValue && onSearch(inputValue)}
                     edge="end"
+                    sx={{
+                      color: 'text.secondary',
+                      '&:hover': {
+                        color: 'primary.main',
+                        backgroundColor: 'transparent',
+                      },
+                    }}
                   >
                     <SearchIcon />
                   </IconButton>
                 )}
               </>
             ),
-            style: { 
-              borderRadius: '24px', 
-              backgroundColor: 'white',
-            }
           }}
           sx={{
-          width: '100%',
-          maxWidth: 'none',
-          boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
-        }}
+            width: '100%',
+            '& .MuiOutlinedInput-root': {
+              paddingRight: '0 !important',
+              height: '48px',
+            },
+          }}
         />
       )}
+      sx={{
+        '& .MuiAutocomplete-popupIndicator': {
+          display: 'none',
+        },
+      }}
     />
   );
 };

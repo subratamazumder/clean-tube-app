@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  const { q, maxResults = 12 } = req.query;
+  const { q, maxResults = 20 } = req.query;
 
   try {
     const API_KEY = process.env.YOUTUBE_API_KEY;

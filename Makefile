@@ -26,14 +26,12 @@ push: version
 	git push origin "v$$NEW_VERSION" || \
 	{ echo "❌ Push failed"; exit 1; }
 run:
-	@echo "🚀 Starting application..."
-	@echo "🔍 Checking Node version..."
-	@echo "✅ Using Node $(shell node -v)"
-	@if [ ! -d "node_modules" ] || [ "package-lock.json" -nt "node_modules" ]; then \
+	@. ${HOME}/.nvm/nvm.sh && nvm use 22; \
+	if [ ! -d "node_modules" ] || [ "package-lock.json" -nt "node_modules" ]; then \
 		echo "📦 Installing dependencies..."; \
 		npm ci --silent; \
 	else \
 		echo "✓ Dependencies already up-to-date"; \
-	fi
-	@echo "🔧 Starting development server..."
-	@npm run dev
+	fi; \
+	echo "🔧 Starting development server..."; \
+	npm run dev

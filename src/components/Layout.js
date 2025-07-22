@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
     <>
       <Head>
         <title>LeanTube</title>
-        <meta name="description" content="Search and watch videos" />
+        <meta name="description" content="Search and watch videos! No more distractions!" />
       </Head>
       <Box
         sx={{

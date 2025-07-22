@@ -4,8 +4,6 @@ import { Box, Container, Grid, Typography } from '@mui/material';
 import { searchMockVideos } from '../services/mockData';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import Layout from '../components/Layout';
-// import SearchBox from '../components/SearchBox';
-// Replace your current SearchBox import with:
 import AutoCompleteSearch from '../components/AutoCompleteSearch';
 import VideoGrid from '../components/VideoGrid';
 import VideoPlayer from '../components/VideoPlayer';
